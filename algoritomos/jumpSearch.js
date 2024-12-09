@@ -59,3 +59,5 @@ function jumpSearch(array, value) {
 }
 
 console.log(jumpSearch(numbers, 55))
+
+module.exports = jumpSearch
