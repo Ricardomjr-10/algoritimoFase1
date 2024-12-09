@@ -13,3 +13,5 @@ function missingNumber(array) {
 
 }
 console.log(missingNumber(array))
+
+module.exports = missingNumber
