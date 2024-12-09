@@ -30,13 +30,16 @@ const number = [0, 1, 1, 2, 3, 5, 10, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 console.log(salta4(number, 10))
 
 const fibos = (arr, value) => {
-   let ind = arr.find((number, index) => {
-        if (number === value) {
-            return index
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === value) {
+            return `O ${value} esta no index ${i}`
         }
-    })
-    return ind
+    }
+    return -1
 }
 
+
+
+
 let numb = [0, 1, 1, 2, 3, 5, 10]
-console.log(fibos(numb, 5))
+console.log(fibos(numb, 2))
