@@ -19,3 +19,4 @@ const selectionSort = array => {
 console.log(selectionSort(array))
 
 module.exports = selectionSort
+
