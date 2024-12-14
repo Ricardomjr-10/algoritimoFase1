@@ -27,5 +27,19 @@ while (indLeft <= indRight) {
         return  indRight = mid - 1
     }
 }
+
+let left = 0
+let right = n - 1
+
+while (left <= right) {
+    i = min(fibMinus2, right)
+
+    if (x === array[i]) {
+        return i
+    }
+    if (x < array[i]) {
+        right = i - 1
+    }
+}
 console.log(fib)
 
