@@ -5,6 +5,7 @@ let fib = 0
 let array = []
 let n = array.length
 n = 5
+let x
 
 
  while (fib <= n) {
@@ -15,4 +16,16 @@ n = 5
 
 let indLeft = 0
 let indRight = n -1
+
+while (indLeft <= indRight) {
+    let mid = indLeft + fibMinus2 - 1
+
+    if (x === array[mid]) {
+        return mid
+    }
+    if (x < array[mid]) {
+        return  indRight = mid - 1
+    }
+}
 console.log(fib)
+
