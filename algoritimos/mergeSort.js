@@ -1,27 +1,31 @@
-const array = [38, 27, 43, 10]
+function mergeSort(array) {
+    if (array.length <= 1) {
+        return array;
+    }
 
-const mergeSort = array => {
-    let pHalf = array.slice(0, 2)
-    let sHalf = array.slice(2, 4)
-    
-    let pp1Half = pHalf.slice(0, 1)
-    let pp2Half = pHalf.slice(1)
-    let ss1Half = sHalf.slice(0, 1)
-    let ss2Half = sHalf.slice(1)
-    
-    let Pmetade = ss2Half.concat(ss1Half)
-    let Smetade = pp2Half.concat(pp1Half)
-    
-    let metadeSort = Smetade.concat(Pmetade).sort((a, b) => a - b)
+    const middle = Math.floor(array.length / 2);
+    const left = array.slice(0, middle);
+    const right = array.slice(middle);
 
-    return metadeSort
+    return merge(mergeSort(left), mergeSort(right));
+
+    function merge(left, right) {
+        const result = [];
+        let leftIndex = 0;
+        let rightIndex = 0;
+
+        while (leftIndex < left.length && rightIndex < right.length) {
+            if (left[leftIndex] < right[rightIndex]) {
+                result.push(left[leftIndex]);
+                leftIndex++;
+            } else {
+                result.push(right[rightIndex]);
+                rightIndex++;
+            }
+        }
+
+        return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
+    }
 }
 
-console.log(mergeSort(array))
-
-// console.log(pHalf)
-// console.log(sHalf)
-// console.log(pp1Half)
-// console.log(pp2Half)
-// console.log(ss1Half)
-// console.log(ss2Half)
+console.log (mergeSort([38, 27, 43, 10,20,7]))
