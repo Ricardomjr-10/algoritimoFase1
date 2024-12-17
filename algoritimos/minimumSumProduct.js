@@ -19,3 +19,5 @@ const minimumSumProduct = (arrA, arrB, k) => {
 }
 
 console.log(minimumSumProduct(arrA, arrB, k))
+
+module.exports = minimumSumProduct
