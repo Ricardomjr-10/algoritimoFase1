@@ -19,3 +19,5 @@ const quickSort = array => {
 }
 
 console.log(quickSort([38, 27, 43, 10,20,7]))
+
+module.exports = quickSort

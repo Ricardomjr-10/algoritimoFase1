@@ -1,8 +1,8 @@
-
 const missingNumber = require('./algoritimos/missingNumber.js')
 const jumpSearch = require('./algoritimos/jumpSearch.js')
 const selectionSort = require('./algoritimos/selectionSort.js')
 const minimumSumProduct = require('./algoritimos/minimumSumProduct.js')
+const quickSort = require('./algoritimos/quickSort.js')
 
 test('Missing number', () => {
     expect(missingNumber([1, 2, 4, 6, 3, 7, 8])).toBe(5)
@@ -18,4 +18,8 @@ test('Selection Sort', () => {
 
 test('Minimum Sum Product', () => {
     expect(minimumSumProduct([1, 2, 3], [4, 5, 6], 2)).toBe(8)
+})
+
+test('Quick Sort', () => {
+    expect(quickSort([38, 27, 43, 10,20,7])).toEqual([7, 10, 20, 27, 38, 43])
 })
