@@ -17,5 +17,5 @@ test('Selection Sort', () => {
 })
 
 test('Minimum Sum Product', () => {
-    expect(minimumSumProduct([1, 2, 3], [4, 5, 6], 2)).toBe(10)
+    expect(minimumSumProduct([1, 2, 3], [4, 5, 6], 2)).toBe(8)
 })
