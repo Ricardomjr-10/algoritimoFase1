@@ -27,3 +27,5 @@ const array = [
   }
 
   console.log(fractionKnapsack(array, maxWeight))
+
+  module.exports = fractionKnapsack
