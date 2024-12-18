@@ -6,21 +6,24 @@ const array = [
 
   const maxWeight = 50;
 
-  array.sort((a, b) => b.value/b.weight - a.value/a.weight)
-
-  let currentWeight = 0
-  let currentValue = 0
-
-  for (let i = 0; i < array.length; i++) {
-    if (currentWeight + array[i].weight <= maxWeight) {
-      currentWeight += array[i].weight
-      currentValue += array[i].value
-    } else {
-      const fraction = (maxWeight - currentWeight) / array[i].weight
-      currentWeight += array[i].weight * fraction
-      currentValue += array[i].value * fraction
-      break
-    }
+  function fractionKnapsack(array, maxWeight) {
+      array.sort((a, b) => b.value/b.weight - a.value/a.weight)
+    
+      let currentWeight = 0
+      let currentValue = 0
+    
+      for (let i = 0; i < array.length; i++) {
+        if (currentWeight + array[i].weight <= maxWeight) {
+          currentWeight += array[i].weight
+          currentValue += array[i].value
+        } else {
+          const fraction = (maxWeight - currentWeight) / array[i].weight
+          currentWeight += array[i].weight * fraction
+          currentValue += array[i].value * fraction
+          break
+        }
+      }
+      return [currentValue, currentWeight]
   }
-  
-  console.log(currentValue, currentWeight)
+
+  console.log(fractionKnapsack(array, maxWeight))
